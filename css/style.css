@@ -1,0 +1,577 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: transparent; /* Rimuovi lo sfondo nero */
+    color: #fff; /* Testo bianco di default */
+    scroll-behavior: smooth; /* Scroll fluido */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header */
+.header {
+    display: flex; /* Usiamo Flexbox per allineare logo e menu */
+    justify-content: space-between; /* Logo a sinistra, menu a destra */
+    align-items: center; /* Allinea verticalmente al centro */
+    background-color: white; /* Sfondo bianco */
+    padding: 10px 20px; /* Spaziatura interna */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombra leggera sotto l'header */
+    position: fixed; /* Header fisso in alto */
+    top: 0;
+    left: 0;
+    width: 100%; /* Occupa tutta la larghezza */
+    z-index: 1000; /* Assicura che l'header sia sopra altri elementi */
+}
+
+/* Logo */
+.logo img {
+    height: 50px; /* Altezza del logo (regola in base alle tue esigenze) */
+    width: auto; /* Larghezza automatica per mantenere le proporzioni */
+}
+
+/* Menu di navigazione */
+.menu ul {
+    list-style: none; /* Rimuove i pallini della lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Disposizione orizzontale dei link */
+    gap: 20px; /* Spazio tra i link */
+}
+
+.menu ul li {
+    display: inline-block; /* Disposizione in linea */
+}
+
+.menu ul li a {
+    text-decoration: none; /* Rimuove la sottolineatura dei link */
+    color: #333; /* Colore del testo */
+    font-size: 16px; /* Dimensione del font */
+    font-weight: 500; /* Spessore del font */
+    transition: color 0.3s ease; /* Transizione per l'effetto hover */
+}
+
+.menu ul li a:hover {
+    color: #007BFF; /* Cambia colore al passaggio del mouse */
+}
+
+/* Sezione Principale */
+.principale {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/sfondo-principale.jpg'); /* Immagine di sfondo viola */
+    background-size: cover;
+    background-position: center;
+    outline: 20px solid whitesmoke;
+    border-radius: 20px;
+    margin: 40px;
+    margin-bottom: 60px;
+}
+
+.principale::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 0, 128, 0.4); /* Overlay viola semi-trasparente */
+    border-radius: 20px;
+    z-index: 1; /* Assicura che l'overlay sia sopra lo sfondo */
+}
+
+/* Contenuto della sezione principale */
+.principale .contenuto {
+    position: relative;
+    z-index: 2; /* Assicura che il contenuto sia sopra l'overlay */
+    text-align: center; /* Testo centrato */
+    color: white; /* Colore del testo */
+    animation: comparsa 1.5s ease-in-out; /* Animazione di comparsa */
+}
+
+/* Titolo */
+.principale .contenuto h1 {
+    font-size: 4rem; /* Dimensione del titolo */
+    font-weight: bold; /* Grassetto */
+    margin-bottom: 20px; /* Spaziatura sotto il titolo */
+    font-family: 'Arial', sans-serif; /* Font personalizzato */
+}
+
+/* Slogan */
+.principale .contenuto .slogan {
+    font-size: 2rem; /* Dimensione dello slogan */
+    font-weight: 500; /* Peso del font */
+    margin-bottom: 10px; /* Spaziatura sotto lo slogan */
+    font-family: 'Arial', sans-serif; /* Font personalizzato */
+}
+
+/* Sottotitolo */
+.principale .contenuto .subtitle {
+    font-size: 1.5rem; /* Dimensione del sottotitolo */
+    font-weight: 400; /* Peso del font */
+    font-family: 'Arial', sans-serif; /* Font personalizzato */
+}
+
+/* Animazione di comparsa */
+@keyframes comparsa {
+    0% {
+        opacity: 0; /* Inizia invisibile */
+        transform: translateY(50px); /* Parte da 50px più in basso */
+    }
+    100% {
+        opacity: 1; /* Diventa visibile */
+        transform: translateY(0); /* Torna alla posizione originale */
+    }
+}
+
+/* Sezione Storia */
+.storia {
+    position: relative; /* Per posizionare correttamente il contenuto */
+    padding: 80px 20px; /* Spaziatura interna */
+    background-image: url('../images/sfondo-storia.jpg'); /* Immagine di sfondo */
+    background-size: cover; /* Copre l'intera sezione */
+    background-position: center; /* Centra l'immagine di sfondo */
+    background-color: rgba(128, 0, 128, 0.5); /* Overlay viola semitrasparente */
+    outline: 20px solid whitesmoke;
+    border-radius: 20px;
+    margin: 40px;
+    margin-bottom: 60px;
+    transition: background-color 0.5s ease; /* Transizione per l'overlay */
+}
+
+.storia::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 0, 128, 0.4); /* Overlay viola semi-trasparente */
+    border-radius: 20px;
+    z-index: 1; /* Assicura che l'overlay sia sopra lo sfondo */
+}
+
+/* Contenuto della sezione storia */
+.storia .contenuto {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px; /* Larghezza massima del contenuto */
+    margin: 0 auto; /* Centra il contenuto */
+    text-align: center; /* Testo centrato */
+    color: white; /* Colore del testo */
+    opacity: 0; /* Inizia invisibile */
+    transform: translateY(20px); /* Parte leggermente più in basso */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
+}
+
+/* Quando si passa il mouse sulla sezione */
+.storia:hover .contenuto {
+    opacity: 1; /* Diventa visibile */
+    transform: translateY(0); /* Torna alla posizione originale */
+}
+
+/* Titolo della sezione */
+.storia .contenuto h2 {
+    font-size: 3rem; /* Dimensione del titolo */
+    font-weight: bold; /* Grassetto */
+    color: white; /* Colore del titolo */
+    margin-bottom: 40px; /* Spaziatura sotto il titolo */
+    font-family: 'Arial', sans-serif; /* Font personalizzato */
+}
+
+/* Paragrafi */
+.storia .contenuto p {
+    font-size: 1.2rem; /* Dimensione del testo */
+    line-height: 1.8; /* Altezza della linea */
+    margin-bottom: 30px; /* Spaziatura tra i paragrafi */
+    font-family: 'Arial', sans-serif; /* Font personalizzato */
+}
+
+/* Testo evidenziato */
+.storia .contenuto strong {
+    color: #00FF00; /* Colore verde per il testo evidenziato */
+    font-weight: bold; /* Grassetto */
+    animation: evidenzia 1.5s infinite alternate; /* Animazione di evidenziazione */
+}
+
+/* Animazione di evidenziazione */
+@keyframes evidenzia {
+    0% {
+        color: #00FF00; /* Verde */
+        text-shadow: 0 0 10px #00FF00; /* Ombra verde */
+    }
+    100% {
+        color: #ADFF2F; /* Verde chiaro */
+        text-shadow: 0 0 20px #ADFF2F; /* Ombra verde chiaro */
+    }
+}
+
+/* Sezione Lavori */
+.lavori {
+    position: relative;
+    padding: 80px 20px;
+    background-image: url('../images/sfondo-lavori.jpg'); /* Immagine di sfondo */
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(128, 0, 128, 0.5); /* Overlay viola semitrasparente */
+    outline: 20px solid whitesmoke;
+    border-radius: 20px;
+    margin: 40px;
+    margin-bottom: 60px;
+    transition: background-color 0.5s ease; /* Transizione per l'overlay */
+}
+
+.lavori::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 0, 128, 0.4); /* Overlay viola semi-trasparente */
+    border-radius: 20px;
+    z-index: 1; /* Assicura che l'overlay sia sopra lo sfondo */
+}
+
+/* Contenuto della sezione lavori */
+.lavori .contenuto {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+    opacity: 0; /* Inizia invisibile */
+    transform: translateY(20px); /* Parte leggermente più in basso */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
+}
+
+/* Quando si passa il mouse sulla sezione */
+.lavori:hover .contenuto {
+    opacity: 1; /* Diventa visibile */
+    transform: translateY(0); /* Torna alla posizione originale */
+}
+
+/* Titolo della sezione */
+.lavori .contenuto h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Testo introduttivo */
+.lavori .contenuto .intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Griglia delle tecnologie e applicazioni */
+.grid-tecnologie {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonne */
+    gap: 40px; /* Spazio tra le colonne */
+    margin-bottom: 40px;
+}
+
+/* Stile delle colonne */
+.tecnologia, .applicazioni {
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo semitrasparente */
+    padding: 20px;
+    border-radius: 10px; /* Bordi arrotondati */
+}
+
+/* Titoli delle colonne */
+.tecnologia h3, .applicazioni h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #00FF00; /* Colore verde */
+    text-decoration: underline;
+}
+
+/* Liste */
+.tecnologia ul, .applicazioni ul {
+    list-style: none; /* Rimuove i pallini */
+    padding: 0;
+}
+
+.tecnologia ul li, .applicazioni ul li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Testo evidenziato */
+.tecnologia strong, .applicazioni strong {
+    color: #00FF00; /* Colore verde */
+}
+
+/* Mission */
+.lavori .contenuto .mission {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Sezione Servizi */
+.servizi {
+    position: relative;
+    padding: 80px 20px;
+    background-image: url('../images/sfondo-servizi.jpg'); /* Immagine di sfondo */
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(128, 0, 128, 0.5); /* Overlay viola semitrasparente */
+    outline: 20px solid whitesmoke;
+    border-radius: 20px;
+    margin: 40px;
+}
+
+.servizi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 0, 128, 0.4); /* Overlay viola semi-trasparente */
+    border-radius: 20px;
+    z-index: 1; /* Assicura che l'overlay sia sopra lo sfondo */
+}
+
+/* Contenuto della sezione servizi */
+.servizi .contenuto {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+/* Titolo della sezione */
+.servizi .contenuto h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    opacity: 0; /* Inizia invisibile */
+    transform: translateY(20px); /* Parte leggermente più in basso */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione */
+}
+
+/* Griglia dei riquadri */
+.grid-servizi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonne */
+    gap: 20px; /* Spazio tra i riquadri */
+}
+
+/* Stile dei riquadri */
+.servizi .riquadro {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: white; /* Colore del testo */
+    background-color: rgba(48, 197, 76, 0.5);
+    border-radius: 10px; /* Bordi arrotondati */
+    opacity: 0; /* Inizia invisibile */
+    transform: translateY(20px); /* Parte leggermente più in basso */
+    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease; /* Transizione */
+}
+
+.servizi:hover .contenuto h2 {
+    opacity: 1; /* Diventa visibile */
+    transform: translateY(0); /* Torna alla posizione originale */
+}
+
+/* Quando si passa il mouse sulla sezione */
+.servizi:hover .riquadro {
+    opacity: 1; /* Diventa visibile */
+    transform: translateY(0); /* Torna alla posizione originale */
+}
+
+/* Effetto hover per i riquadri */
+.servizi .riquadro:hover {
+    transform: translateY(-10px); /* Sollevamento */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ombra */
+}
+
+/* Immagine del riquadro */
+.servizi .riquadro-immagine {
+    height: 200px; /* Altezza fissa per l'immagine */
+    background-size: cover; /* Copre l'intero spazio */
+    background-position: center; /* Centra l'immagine */
+}
+
+/* Titolo del riquadro */
+.servizi .riquadro h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    z-index: 1; /* Assicura che il footer sia sopra l'animazione */
+    background: transparent; /* Rimuovi lo sfondo nero del footer */
+    color: white;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenuto del footer */
+.footer .contenuto {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Titolo della mappa */
+.mappa-titolo h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Mappa */
+.mappa {
+    margin-bottom: 40px;
+}
+
+.mappa iframe {
+    width: 100%;
+    height: 300px; /* Altezza della mappa */
+    border-radius: 10px; /* Bordi arrotondati */
+    border: 2px solid #00FF00; /* Bordo verde */
+}
+
+/* Social */
+.social {
+    margin-bottom: 40px;
+}
+
+.social h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.social ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social ul li a:hover {
+    color: #00FF00; /* Verde al passaggio del mouse */
+}
+
+/* Contatti */
+.contatti {
+    margin-bottom: 40px;
+}
+
+.contatti h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contatti p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Form per il preventivo */
+.form-preventivo {
+    margin-bottom: 40px;
+}
+
+.form-preventivo h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-preventivo form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-preventivo input,
+.form-preventivo textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.form-preventivo textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-preventivo button {
+    padding: 10px 20px;
+    background-color: rgba(48, 197, 76, 0.5);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-preventivo button:hover {
+    background-color: rgba(48, 197, 76, 0.9);
+}
+
+/* Diritti riservati */
+.footer-bottom {
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+/* Livello per l'animazione JavaScript */
+#background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Manda l'animazione sopra lo sfondo nero ma sotto il contenuto */
+    pointer-events: none; /* Impedisce interazioni con l'animazione */
+}
